@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cmath>
+#include <stdlib.h>
+using namespace std;
+
+int percentage(float &c1, float&c2, float&c3)
+{
+    int cultures = c1 + c2 + c3;
+    c1 = (c1 / cultures) * 100;
+    c2 = (c2 / cultures) * 100;
+    c3 = (c3 / cultures) * 100;
+    return cultures;
+}
+
+int main()
+{
+    float c1, c2, c3;
+    cout << "the amount of cells in the first culture is- ";
+    cin >> c1;
+    cout << "the amount of cells in the second culture is- ";
+    cin >> c2;
+    cout << "the amount of cells in the third culture is- ";
+    cin >> c3;
+    cout << "the total amount of cultures is " << percentage(c1, c2, c3) << ".\n";
+    cout << "the relative amount of the first cell culture is " << c1 << "%\n";
+    cout << "the relative amount of the second cell culture is " << c2 << "%\n";
+    cout << "the relative amount of the third cell culture is " << c3 << "%";
+
+    return 0;
+}

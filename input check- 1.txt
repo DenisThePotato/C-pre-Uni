@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int Num1, Num2;
+    bool LieDetector= false;
+    do
+    {
+        cout << "please input a number and a number that divides it without remainder (cannot be 0)- ";
+            cin >> Num1 >> Num2;
+            if ((Num1 >= 0) && (Num2 > 0))
+            {
+                if (Num1 % Num2 == 0)
+                    LieDetector = true;
+            }
+            if (LieDetector == false)
+                cout << "the input does not follow the instructions, try again.\n";
+
+    } while (LieDetector == false);
+    cout << "good job.";
+
+
+
+    return 0;
+}

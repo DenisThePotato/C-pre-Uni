@@ -1,0 +1,37 @@
+#include <iostream>
+#include <cmath>
+#include <stdlib.h>
+#include <string>
+#include <string.h>
+using namespace std;
+
+int division(int num, int divider, int count)
+{
+    if (divider * count == num)
+        return count;
+
+    division(num, divider, ++count);
+}
+
+
+int main()
+{
+    int num = 0, divider = 0, count = 1;
+    do
+    {
+        cout << "please input a number- ";
+        cin >> num;
+        cout << "please input a second number- ";
+        cin >> divider;
+        if (num < 0)
+        cout << "invalid number. try again.\n";
+        if (divider <= 0)
+        cout << "invalid divider. try again.\n";
+    } while (num < 0 && divider < 0);
+    if (num == 0)
+        cout << num << " / " << divider << " = 0";
+    else
+    cout << num << " / " << divider << " = " << division(num, divider, count);
+
+    return 0;
+}

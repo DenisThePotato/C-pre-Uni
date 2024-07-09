@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int Num = 0;
+    while (Num < 10)
+    {
+        cout << Num << endl;
+        Num++;
+    }
+    
+   
+    return 0;
+}

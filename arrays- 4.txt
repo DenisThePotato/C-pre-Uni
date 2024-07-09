@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void Calculator(int array1[5],int N1,int N2)
+{
+    int N1clone = array1[N1];
+    array1[N1] = array1[N2];
+    array1[N2] = N1clone;
+}
+
+int main()
+{
+    int Numbers1[5], Num1 = 0, Num2 = 0;
+    for (int counter = 0; counter < 5; ++counter)
+    {
+        cout << "enter your " << counter + 1 << " number- ";
+        cin >> Numbers1[counter];
+    }
+    for (int counter = 0; counter < 5; ++counter)
+    {
+        cout << Numbers1[counter] << " ";
+    }
+    do
+    {
+        cout << "choose the numbers in line you'd like to switch (1-5)- ";
+        cin >> Num1 >> Num2;
+        if (Num1 < 1 || Num1 > 5 || Num2 < 1 || Num2 > 5)
+            cout << "the numbers are 1-5 only. try again.\n";
+    } while (Num1 < 1 || Num1 > 5 || Num2 < 1 || Num2 > 5);
+    Calculator(Numbers1, (Num1-1), (Num2-1));
+    cout << "after swap:\n";
+    for (int counter = 0; counter < 5; ++counter)
+    {
+        cout << Numbers1[counter] << " ";
+    }
+
+
+    return 0;
+}

@@ -1,0 +1,68 @@
+#include <iostream>
+#include <cmath>
+#include <stdlib.h>
+using namespace std;
+
+void swap(int &big, int &med, int &small)                             
+{
+    int big2 = big, med2 = med, small2 = small;
+    if (big > med && big > small)
+    {
+        if (small > med)
+        {
+            med = small2;
+            small = med2;
+        }
+    }
+    else if (med > small && med > big)
+    {
+        if (big > small)
+        {
+            big = med2;
+            med = big2;
+        }
+        else
+        {
+            big = med2;
+            med = small2;
+            small = big2;
+        }
+    }
+    else
+    {
+        if (big > med)
+        {
+            big = small2;
+            med = big2;
+            small = med2;
+        }
+        else
+        {
+            big = small2;
+            med = med2;
+            small = big2;
+        }
+    }
+}
+
+int sort(int &big, int &med, int &small)
+{
+    int sum = big + med + small;
+    swap(big, med, small);
+    return sum;
+}
+
+int main()
+{
+    int big, small, med;
+    cout << "input the first number- ";
+    cin >> big;
+    cout << "input the second number- ";
+    cin >> med;
+    cout << "input the third number- ";
+    cin >> small;
+    cout << "the sum of your numbers is " << sort(big, med, small) << ".\n";
+    cout << "your sorted numbers (big to small) are- " << big << ", " << med << ", " << small << ".";
+
+    return 0;
+}

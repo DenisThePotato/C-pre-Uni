@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int UserI, Units, Tens, Hundreds, OriginalUserI;
+    float Average;
+    do
+    {
+        cout << "choose a positive 3-digit number- ";
+        cin >> UserI;
+        OriginalUserI = UserI;
+        if ((UserI <= 999) && (UserI >= 100))
+        {
+            Hundreds = UserI / 100;
+            UserI %= 100;
+            Tens = UserI/10;
+            Units = UserI % 10;
+            Average = (float(Units + Tens + Hundreds) / 3);
+        }
+        else
+            cout << "the number is not a positive 3 digit number. try again.\n";
+    } while ((OriginalUserI > 999) || (OriginalUserI < 100));
+    cout << "the inverted number is " << Units << Tens << Hundreds << endl;
+    cout << "the average of the digits is " << Average;
+    
+
+
+    return 0;
+}

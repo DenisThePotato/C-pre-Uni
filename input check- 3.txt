@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    float Members;
+    int MemberCheck;
+    bool TruthDetector = false;
+    do
+    {
+        cout << "please input the number of your family members- ";
+        cin >> Members;
+        MemberCheck = Members;
+        if (Members < 0)
+            cout << "you cant have a negative amount of family members. try again.\n";
+        else if (Members != MemberCheck)
+            cout << "There isnt a thing such as half humans. try again.\n";
+        else
+            TruthDetector = true;
+    } while (TruthDetector == false);
+    cout << "yeah, " << Members << " family members makes sense.";
+    
+
+    return 0;
+}

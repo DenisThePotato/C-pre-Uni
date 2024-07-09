@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int Num1, Num2, Result = 0, Counter;
+    cout << "please input the first number- ";
+    cin >> Num1;
+    cout << "please input the second number- ";
+    cin >> Num2;
+    Counter = abs(Num2);
+    if ((Num1 == 0) || (Num2 == 0))
+        cout << Num1 << " * " << Num2 << " = 0";
+    else
+    {
+        while (Counter != 0)
+        {
+            Result += abs(Num1);
+            Counter--;
+        }
+        if (((Num1 > 0) && (Num2 > 0)) || ((Num1 < 0) && (Num2 < 0)))
+            cout << Num1 << " * " << Num2 << " = " << Result;
+        else
+            cout << Num1 << " * " << Num2 << " = -" << Result;
+    }
+
+
+    return 0;
+}

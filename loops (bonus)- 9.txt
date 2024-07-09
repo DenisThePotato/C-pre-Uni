@@ -1,0 +1,58 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    float Input, PowerCheck, Res, InputClone;
+    int Power, PowerClone, Counter = 1;
+    cout << "input a number- ";
+    cin >> Input;
+    Res = Input;
+    InputClone = abs(Input);
+    do
+    {
+        cout << "in power? (has to be positive)- ";
+        cin >> PowerCheck;
+        Power = int(PowerCheck);
+        if (Power != PowerCheck)
+            cout << "the power has to be an int. try again.\n";
+        else if (Power < 0)
+            cout << "the power has to be positive (power >=0). try again.\n";
+    } while ((Power != PowerCheck) || (Power < 0));
+    PowerClone = Power;
+    if ((Input < 0) && (Power > 1) && (Power%2==0))
+    {
+        InputClone = abs(InputClone);
+        Res = abs(Res);
+    }
+        if (Power==0)
+            cout << Input << " ^ " << Power << " = " << "1";
+        else
+        {
+            while (PowerClone != 1)
+            {
+                while (Counter != abs(Input))     
+                {                           
+                    Res += InputClone;
+                    Counter++;
+                }
+                InputClone = Res;
+                Counter = 1;
+                PowerClone--;
+            }
+
+            /*for (int powerClone = Power; powerClone > 1; powerClone--)
+            {
+                for (int InputClone = Res, Counter = 1; Counter < Input; Counter++)
+                {
+                    Res += InputClone;
+                }
+            }*/
+
+            cout << Input << " ^ " << Power << " = " << Res;
+        }
+    
+
+    return 0;
+}

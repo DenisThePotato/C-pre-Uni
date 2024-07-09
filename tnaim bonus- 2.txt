@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int Num1, Num2;
+    cout << "input your first number- ";
+    cin >> Num1;
+    cout << "input your second number- ";
+    cin >> Num2;
+    if (Num1 > Num2)
+    {
+        cout << endl << Num1 << "is bigger than " << Num2;
+    }
+    else if (Num2 > Num1)
+    {
+        cout << endl << Num2 << " is bigger than " << Num1;
+    }
+    else
+        cout << endl << " your two numbers are equals";
+
+    return 0;
+}

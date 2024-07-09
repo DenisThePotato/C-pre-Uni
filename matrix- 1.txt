@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void display(int array[5][10])
+{
+    for (int count = 0; count < 5; ++count)
+    {
+        for (int count2 = 0; count2 < 10; ++count2)
+            cout << array[count][count2];
+        cout << endl;
+    }
+}
+
+void flipnum(int array[5][10], int column, int row)
+{
+    for (int counter = 0; counter < 10; ++counter)       //flipping row
+    {
+        array[row][counter] = 1;
+    }
+    for (int counter = 0; counter < 5; ++counter)        //flipping columns
+    {
+        array[counter][column] = 1;
+    }
+}
+
+int main()
+{
+    int Numbers[5][10]{ 0 }, row = 0, column = 0;
+    display(Numbers);
+    cout << "choose the column you'd like to switch- ";
+    cin >> column;
+    --column;
+    cout << "choose the row you'd like to switch- ";
+    cin >> row;
+    --row;
+
+    flipnum(Numbers, column, row);
+    display(Numbers);
+
+
+
+    return 0;
+}

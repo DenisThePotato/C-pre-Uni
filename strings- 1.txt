@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cmath>
+#include <stdlib.h>
+#include <string>
+using namespace std;
+
+void comparison(char DNA[], int place, char partial[4])
+{
+    char comparison[4] = { 0 };
+    while (place< strlen(DNA))
+    {
+        comparison[0] = DNA[place];
+        comparison[1] = DNA[place + 1];
+        comparison[2] = DNA[place + 2];
+        if (strcmp(comparison, partial) == 0)
+            cout << "the partial sequence that is '" << partial << "' was found in index " << place + 1 << ".\n";
+        ++place;
+    }
+}
+
+int main()
+{
+    char DNA[10] = { 0 }, partial[4] = { 0 };
+    int place = 0;
+    cout << "please input the DNA sequence: ";
+    cin >> DNA;
+    cout << "please input a partial sequence of 3 characters: ";
+    cin >> partial;
+    comparison(DNA, place, partial);
+
+
+    return 0;
+}

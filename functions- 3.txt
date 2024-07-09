@@ -1,0 +1,50 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int valid_input()
+{
+    int Input;
+    bool Check = false;
+    do
+    {
+        cin >> Input;
+        if ((Input >= 100) && (Input <= 200))
+        {
+            cout << "your number was registered.\n";
+            Check = true;
+        }
+        else
+            cout << "error. please try again.";
+    } while (Check == false);
+    return Input;
+}
+
+int max_of_two(int Num1, int Num2)
+{
+    if (Num1 > Num2)
+        return Num1;
+    else
+        return Num2;
+}
+
+int main()
+{
+    cout << "Please enter a number- ";
+    int FirstNum = valid_input();
+    cout << "enter your next number- ";
+    int SecondNum = valid_input();
+    cout << "enter your next number- ";
+    int ThirdNum = valid_input();
+    cout << "enter your next number- ";
+    int FourthNum = valid_input();
+    cout << "you numbers are: " << FirstNum << ", " << SecondNum << ", " << ThirdNum << " and " << FourthNum << ".\n";
+    int FirstWinner = max_of_two(FirstNum, SecondNum);
+    int SecondWinner = max_of_two(ThirdNum, FourthNum);
+    int Winner = max_of_two(FirstWinner, SecondWinner);
+    cout << "the highest number is " << Winner << ".";
+    /*
+        cout << "max of 4 is " << max_of_two(max_of_two(FirstNum, SecondNum), max_of_two(ThirdNum, FourthNum));
+    */
+    return 0;
+}

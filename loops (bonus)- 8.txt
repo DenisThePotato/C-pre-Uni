@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int Students, StudentNum=1, ID;
+    do
+    {
+        cout << "please input the number of students in the class- ";
+        cin >> Students;
+        if (Students == 0)
+            cout << "you wouldnt use this if there were no students in the class. try again.\n";
+        else if (Students < 0)
+            cout << "there cant be a negative amount of students. try again.\n";
+    } while (Students <= 0);
+    do
+    {
+        cout << "please enter student number " << StudentNum << "'s ID: ";
+        cin >> ID;
+        StudentNum++;
+        Students--;
+    } while (Students != 0);
+    cout << "all ID's filled.";
+
+    
+
+    return 0;
+}

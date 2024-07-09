@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void calculator(float &Num1, float &Num2, float &Multiplication, float &Division, float &Addition, float &Subtraction)
+{
+    Addition = Num1 + Num2;
+    Subtraction = Num1 - Num2;
+    Multiplication = Num1 * Num2;
+    Division = Num1 / Num2;
+    if (Num2 != 0)
+        Division = Num1 / Num2;
+    else
+        cout << "notice- the result of division will not be calculated.\n";
+}
+
+int main()
+{
+    float Num1 = 0, Num2 = 0, Multiplication = 0, Division = 0, Addition = 0, Subtraction = 0;
+    cout << "enter your first number- ";
+    cin >> Num1;
+    cout << "enter your second number- ";
+    cin >> Num2;
+    calculator(Num1, Num2, Multiplication, Division, Addition, Subtraction);
+    cout << Num1 << " + " << Num2 << " = " << Addition << endl;
+    cout << Num1 << " - " << Num2 << " = " << Subtraction << endl;
+    cout << Num1 << " * " << Num2 << " = " << Multiplication << endl;
+    if (Num2 != 0)
+    cout << Num1 << " / " << Num2 << " = " << Division;
+
+
+    return 0;
+}

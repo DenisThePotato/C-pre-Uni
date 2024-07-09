@@ -1,0 +1,52 @@
+#include <iostream>
+#include <cmath>
+#include <stdlib.h>
+using namespace std;
+
+void display(int array[12][30])                             
+{
+    for (int count = 0; count < 5; ++count)
+    {
+        for (int count2 = 0; count2 < 10; ++count2)
+            cout << array[count][count2] << " ";
+        cout << endl;
+    }
+}
+
+void randomise(int array[12][30])
+{
+    for (int count = 0; count < 5; ++count)
+    {
+        for (int count2 = 0; count2 < 10; ++count2)
+            array[count][count2]= rand() % 10;
+    }
+}
+
+int neighbours(int array[12][30])
+{
+    int totalnum = 0;
+    for (int count = 1; count < 4; ++count)
+    {
+        for (int count2 = 1; count2 < 9; ++count2)
+            if (array[count][count2] == (array[count][count2+1] + array[count][count2-1] + array[count+1][count2] + array[count-1][count2]))
+            {
+                cout << array[count][count2] << "which is located at <" << count+1 << "," << count2+1 << ">\n";
+                ++totalnum;
+            }
+    }
+    return totalnum;
+}
+
+
+int main()
+{
+    srand(5);
+    int Numbers[12][30]{ 0 };
+    randomise(Numbers);
+    display(Numbers);
+    cout << "the total number of neighbouring numbers is " << neighbours(Numbers);
+
+
+
+    return 0;
+}

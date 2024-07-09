@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+
+int main()
+{
+    int Counter = 1;
+    int Powerof2 [10];
+    Powerof2[0] = 2;
+    cout << Powerof2 [0] << endl ;
+    do
+    {
+        Powerof2[Counter] = Powerof2[Counter - 1] * 2;
+        cout << Powerof2[Counter] << endl ;
+        Counter++;
+    } while (Counter < 10);
+
+
+    return 0;
+}

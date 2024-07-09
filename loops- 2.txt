@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int Num, Result, Original;
+    cout << "please input a number- ";
+    cin >> Num;
+    Result = Num;
+    Original = Num;
+    while(Num > 1)
+    {
+        Result *= --Num;
+    }
+    cout << Original << "!= " << Result;
+
+  
+    return 0;
+}

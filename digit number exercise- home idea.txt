@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int Number, Division= 10, Digits=1;
+    cout << "pick a number (1-...)- ";
+    cin >> Number;
+    Start: 
+    if (!(Number / Division) ==0)
+    {
+        Digits++;
+        Division*=10;
+        goto Start;
+    }
+    else
+    {
+        cout << "\nYour chosen number has " << Digits << " digits";
+    }
+
+    return 0;
+}

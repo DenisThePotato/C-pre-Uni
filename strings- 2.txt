@@ -1,0 +1,71 @@
+#include <iostream>
+#include <cmath>
+#include <stdlib.h>
+#include <string>
+using namespace std;
+
+void reset_board(char matrix[5][10])
+{
+    for (int count = 0; count < 5; ++count)
+    {
+        for (int count2 = 0; count2 < 10; ++count2)
+            matrix[count][count2] = '-';
+    }
+}
+
+void arrange_board(char matrix[5][10])
+{
+    srand(5);
+    int changer;
+    for (int count = 0; count < 5; ++count)
+    {
+        changer = rand() % 10;
+        matrix[count][changer] = '*';
+    }
+}
+
+void display_board(char matrix[5][10])
+{
+    for (int count = 0; count < 5; ++count)
+    {
+        for (int count2 = 0; count2 < 10; ++count2)
+            cout << matrix[count][count2] << " ";
+        cout << endl;
+    }
+}
+
+int bombcount(char matrix[5][10], int row, int column)
+{
+    int count = 0;
+    if (matrix[row][column] == '*')
+        cout << "the coordinate you chose is a bomb.\n";
+    else
+    {
+        if (matrix[row + 1][column] == '*')
+            ++count;
+        if (matrix[row - 1][column] == '*')
+            ++count;
+        if (matrix[row][column + 1] == '*')
+            ++count;
+        if (matrix[row][column - 1] == '*')
+            ++count;
+    }
+    return count;
+}
+
+int main()
+{
+    char matrix[5][10];
+    reset_board(matrix);
+    int row = 0, column = 0;
+    arrange_board(matrix);
+    cout << "choose row- ";
+    cin >> row;
+    --row;
+    cout << "choose column- ";
+    cin >> column;
+    --column;
+    cout << "the amount of bombs near your target is- " << bombcount(matrix, row, column) << ".\n";
+    display_board(matrix);
+    return 0;
+}

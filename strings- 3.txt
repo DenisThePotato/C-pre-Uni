@@ -1,0 +1,60 @@
+#include <iostream>
+#include <cmath>
+#include <stdlib.h>
+#include <string>
+#include <string.h>
+using namespace std;
+
+void len_str(char string1[], char string2[]) //length
+{
+    cout << "the length of the first string is " << strlen(string1) << ".\n";
+    cout << "the length of the second string is " << strlen(string2) << ".";
+}
+
+void cmp_str(char string1[], char string2[]) //comparing length
+{
+    if (strcmp(string1, string2) == 0)
+        cout << "the strings are identical.";
+    else
+        cout << "the strings are different.";
+}
+
+void cpy_str(char string1[], char string2[]) //copying onto
+{
+    strcpy_s(string1, 10, string2);
+    cout << "the first string is now: " << string1 << ".\n";
+    cout << "the second string is now: " << string2 << ".";
+}
+
+void add_str(char string1[], char string2[]) //adding together
+{
+    if (strcat_s(string1, 19, string2) == 0)
+        cout << "your new string is now : " << string1 << ".";
+}
+
+int main()
+{
+    char string1 [20] = { 0 };
+    char string2 [20] = { 0 };
+    int choice = 0;
+    cout << "input the first string- ";
+    cin >> string1;
+    cout << "input the second string- ";
+    cin >> string2;
+    cout << "which one would you like to do?\n";
+    cout << "1- calculate the length of both strings.\n";
+    cout << "2- compare the strings.\n";
+    cout << "3- copy one string onto the other.\n";
+    cout << "4- concatenate both strings.\n";
+    cout << "your preffered option? - ";
+    cin >> choice;
+    if (choice == 1)
+        len_str(string1, string2);
+    if (choice == 2)
+        cmp_str(string1, string2);
+    if (choice == 3)
+        cpy_str(string1, string2);
+    if (choice == 4)
+        add_str(string1, string2);
+    return 0;
+}

@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int Height, Perline =1, Num=0;
+    do
+    {
+        cout << "please input your desired triangle height (height > 1)- ";
+        cin >> Height;
+        if (Height < 1)
+            cout << "the input does not follow the instruction (height > 1). Try again.\n";
+    } while (Height < 1);
+    do
+    {
+       /* do
+        {
+            cout << "*";
+            Num++;
+        } while (Num != Perline);
+        Num = 0;*/
+
+        for (int num = 0; num < Perline; num++)
+            cout << "*";
+
+        cout <<endl;
+        Perline++;
+    } while (Perline <= Height);
+
+
+    return 0;
+}

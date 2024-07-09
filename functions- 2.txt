@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void max_of_two(int Num1, int Num2)
+{
+    if (Num1 > Num2)
+        cout << Num1 << " is the bigger number.";
+    else if (Num2 > Num1)
+        cout << Num2 << " is the bigger number.";
+    else
+        cout << "both numbers are equal- " << Num1 << ".";
+}
+
+int main()
+{
+    int Num1, Num2;
+    cout << "please enter your first number- ";;
+    cin >> Num1;
+    cout << "please input your second number -";
+    cin >> Num2;
+    max_of_two(Num1, Num2);
+    
+ 
+
+    return 0;
+}

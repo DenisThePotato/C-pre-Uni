@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int Num = 2;
+    do
+    {
+        cout << Num << ", ";
+        Num += 2;
+    } while (Num <= 100);
+    
+
+    return 0;
+}

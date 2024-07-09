@@ -1,0 +1,21 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int Num = 1;
+    while (Num <= 50)
+    {
+        if (Num % 10 == 7)
+            cout << "BOOM\n";
+        else if (Num % 7 == 0)
+            cout << "BOOM\n";
+        else 
+            cout << Num << endl;
+        Num++;
+    }
+
+  
+    return 0;
+}
